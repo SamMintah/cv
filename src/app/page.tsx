@@ -86,9 +86,8 @@ export default function Page() {
               ) : null}
             </div>
           </div>
-
           <Avatar className="h-28 w-28">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
+            {/* <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} /> */}
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
         </div>
@@ -116,16 +115,15 @@ export default function Page() {
                 <h4 className="font-mono text-sm leading-none">{work.title}</h4>
               </CardHeader>
               <CardContent className="mt-2 text-xs">
-
                 <ul className="list-disc pl-4">
                   {work.description.split("\n").map((achievement) => (
                     <li key={achievement}>{achievement.trim()}</li>
-
                   ))}
                 </ul>
                   <a  className="hover:underline font-bold" href={work.Documentation}>
                     <h4>Project Documentation</h4>
-                  </a>
+                </a>
+                <Badge>{work.technologies}</Badge>;
               </CardContent>
             </Card>
           ))}
